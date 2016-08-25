@@ -1,6 +1,6 @@
 /**
  * Angular Carousel - Mobile friendly touch carousel for AngularJS
- * @version v1.0.1 - 2016-03-05
+ * @version v1.0.1 - 2016-08-25
  * @link http://revolunet.github.com/angular-carousel
  * @author Julien Bouquillon <julien@revolunet.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -455,7 +455,7 @@ angular.module('angular-carousel').run(['$templateCache', function($templateCach
 
                         if (iAttributes.rnCarouselControls!==undefined) {
                             // dont use a directive for this
-                            var canloop = ((isRepeatBased ? scope.$eval(repeatCollection.replace('::', '')).length : currentSlides.length) > 1) ? angular.isDefined(tAttributes['rnCarouselControlsAllowLoop']) : false;
+                            var canloop = angular.isDefined(tAttributes['rnCarouselControlsAllowLoop']);
                             var nextSlideIndexCompareValue = isRepeatBased ? '(' + repeatCollection.replace('::', '') + ').length - 1' : currentSlides.length - 1;
                             var tpl = '<div class="rn-carousel-controls">\n' +
                                 '  <span class="rn-carousel-control rn-carousel-control-prev" ng-click="prevSlide()" ng-if="carouselIndex > 0 || ' + canloop + '"></span>\n' +
